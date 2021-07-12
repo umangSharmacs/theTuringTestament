@@ -1,4 +1,8 @@
-# The Turing Testament  
+# The Turing Testament 
+AutoMin-2021 System submission
+Team Name: The Turing Testament
+Team members: Umang Sharma, Tirthankar Ghosal, Muskaan Singh, Harpeet Singh 
+
 A Feature Engineering Approach to Summarization.
 
 ## How to use the model 
@@ -46,6 +50,14 @@ A Feature Engineering Approach to Summarization.
         with open(f'{summary_path}\\{file}.txt', 'w', encoding="utf8") as f:
             f.writelines(summary)
 
+## Command Line Add-On
+
+A command line file has also been added to use the system directly from the command line. 
+Simply go to the directory in which the system is stored and run from the command line
+
+    python summariser_cli.py filepath filename max_removal x
+
+The summary will be stored in the filepath with the name as 'filename_summary.txt'.
 
 ## Working 
 
