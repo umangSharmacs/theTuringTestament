@@ -79,7 +79,7 @@ All these iterations are stored, and based on their length and scores, the best 
 
 This ensures that the best set of sentences from the transcript are extracted as its summary.
 
-[Model_Diagram.jpg](https://postimg.cc/nC2kwMnm)
+![Model_Diagram.jpg](https://postimg.cc/nC2kwMnm)
 
     
 
