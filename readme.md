@@ -1,6 +1,9 @@
 # The Turing Testament 
+
 AutoMin-2021 System submission
+
 Team Name: The Turing Testament
+
 Team members: Umang Sharma, Tirthankar Ghosal, Muskaan Singh, Harpeet Singh 
 
 A Feature Engineering Approach to Summarization.
