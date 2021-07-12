@@ -1,4 +1,4 @@
-from feature_extraction import feature_extraction
+from .feature_extraction import feature_extraction
 from math import log
 import pandas as pd
 
