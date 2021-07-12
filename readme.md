@@ -60,7 +60,7 @@ Simply go to the directory in which the system is stored and run from the comman
 
     python summariser_cli.py filepath filename max_removal x
 
-The summary will be stored in the filepath with the name as 'filename_summary.txt'.
+The summary will be stored in the filepath with the name as 'summary_filename.txt'.
 
 ## Working 
 
