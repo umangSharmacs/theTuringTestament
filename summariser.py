@@ -5,7 +5,7 @@ from math import log
 from numpy import std as standard_deviation
 from nltk.translate.meteor_score import single_meteor_score
 
-from .topsis import topsis
+from topsis import topsis
 
 class summariser(topsis):
     def summarise(self, max_removal, x) -> list:
