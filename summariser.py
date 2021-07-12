@@ -9,6 +9,8 @@ from topsis import topsis
 
 class summariser(topsis):
     def summarise(self, max_removal, x) -> list:
+        if max_removal<=1:
+            max_removal=2
         index=0
         slopes=[]
         r=[]              # contains the min and max values for each iteration
@@ -91,31 +93,7 @@ class summariser(topsis):
         vals=[log(r1[i])+log(r2[i])+log(m_scores_transcript[i])-x*log(length[i]) for i in range(len(r1))]
         max_val=vals.index(max(vals))
         df_list[max_val]['key']=self.df['key']
-        summ=[sent for sent in df_list[max_val].sort_index()]
+        summ=[sent for sent in df_list[max_val].sort_index().key]
         summ=''.join(summ)
         self.extractive_summary=summ
         return summ
-
-
-
-
-
-# path="Path_to_transcripts"
-# summary_path="Path_to_store_summaries_in"
-# filelist=os.listdir(path)
-# for index,file in enumerate(filelist):
-#     print(index)
-#     for file1 in os.listdir(f'{path}\\{file}'):
-#         if file1[:10]=='transcript':
-#             with open(f'{path}\\{file}\\{file1}', encoding="utf8") as f:
-#                 text=f.read()
-
-#     summariser=summariser(text)
-#     summariser.make_dataframe()
-#     summary = summariser.summarise(max_removal= 30, x=2)
-
-#     # Store extractive summary
-    
-#     with open(f'{summary_path}\\{file}.txt', 'w', encoding="utf8") as f:
-#         f.writelines(summary)
-    
