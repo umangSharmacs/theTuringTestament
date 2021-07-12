@@ -79,7 +79,7 @@ All these iterations are stored, and based on their length and scores, the best 
 
 This ensures that the best set of sentences from the transcript are extracted as its summary.
 
-(insert image)
+[Summ-Dial-Model-1.jpg](https://postimg.cc/nC2kwMnm)
 
     
 
