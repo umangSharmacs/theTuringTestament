@@ -8,7 +8,8 @@ Team members: Umang Sharma, Tirthankar Ghosal, Muskaan Singh, Harpeet Singh
 
 A Feature Engineering Approach to Summarization.
 
-## How to use the model 
+## Task-A
+### How to use the model 
 
 1. After installing the required modules, create a new python script in the folder and import the summariser.
 
@@ -32,7 +33,7 @@ A Feature Engineering Approach to Summarization.
 	This parameter defines how short the summary should be. A higher number will punish longer summaries. 
 
 
-## Example Code used to extract summaries for Task-A AutoMin 
+### Example Code used to extract summaries for Task-A AutoMin 
 
     path="Path_to_transcripts"
     summary_path="Path_to_store_summaries_in"
@@ -53,7 +54,7 @@ A Feature Engineering Approach to Summarization.
         with open(f'{summary_path}\\{file}.txt', 'w', encoding="utf8") as f:
             f.writelines(summary)
 
-## Command Line Add-On
+### Command Line Add-On
 
 A command line file has also been added to use the system directly from the command line. 
 Simply go to the directory in which the system is stored and run from the command line
@@ -62,7 +63,7 @@ Simply go to the directory in which the system is stored and run from the comman
 
 The summary will be stored in the filepath with the name as 'summary_filename.txt'.
 
-## Working 
+### Working 
 
 The model first calculates features for each sentence in the original transcript and uses TOPSIS to rank the sentences based on these features:
 1. Sentence Length 
@@ -82,6 +83,40 @@ This ensures that the best set of sentences from the transcript are extracted as
 ![Model_Diagram.jpg](https://github.com/umangSharmacs/theTuringTestament/blob/main/AutoMin_modelDiagram.jpeg)
 
     
+## Task B and C
+
+### How to use 
+
+Create a 'compute' obj with the summary and trasncript, or summary and summary that you wish to calculate the similarity between and follow the steps below,
+
+    obj=compute(text1,text2)
+    obj.compute()
+    res=obj.give_result()
+
+Similar to Task-A the code below shows how to get the test results for Task-B and Task-C
+
+    path="path to test directory"
+    for index,file in enumerate(os.listdir(path)):
+        print('\r',index)
+        for file1 in os.listdir(f'{path}\\{file}'):
+            if file1[-5]=='A':
+                with open(f'{path}\\{file}\\{file1}', encoding="utf8") as f:
+                    text=f.read()
+                    s=text
+                
+            if file1[-5]=='B':
+                with open(f'{path}\\{file}\\{file1}', encoding="utf8") as f:
+                    text=f.read()
+                    t=text
+        obj=compute(t,s)
+        obj.compute()
+        res=obj.give_result()
+        df=df.append({
+        'Sl. No.':index+1,
+        'Instance Id': file,
+        'Predicted Label': res}, ignore_index=True)
+
+This will add the results to Dataframe called 'df' .
 
 
     
